@@ -1,5 +1,3 @@
-sudo: true
-cache: false
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
@@ -14,14 +12,10 @@ before_install:
 - mkdir sfdx
 # Install SFDX CLI
 - wget -qO- $URL | tar xJ -C sfdx --strip-components 1
+- rm .sfdx/bin/node
+- ln -s /usr/bin/local/node ./sfdx/bin/node
 - "./sfdx/install"
 - export PATH=./sfdx/$(pwd):$PATH
-before_script:
-# Assign variables
-- export ROOTDIR=force-app/main/default/
-- export TESTLEVEL=RunLocalTests
-# output CLI version
-
 - sfdx --version
 # Output sfdx plugin version
 - sfdx plugins --core
