@@ -39,15 +39,17 @@ $RECYCLE.BIN/
 
 # hide server.key
 assets/server.key
+
+# ignores
 .eslintignore
 .forceignore
-.gitlab-ci.yml
+
+# linting
 .prettierignore
 .prettierrc
-package.json
-sfdx-project.json
-manifest/
-.vscode/
-force-app/
-.sonarlint/
+
+.idea
+.tern-project
+.settings
+test/artifacts
 
