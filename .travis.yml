@@ -1,6 +1,9 @@
-language: generic
-os: linux
-dist: xenial
+sudo: true
+os:
+ - osx
+language: node_js
+node_js:
+ - "15"
 cache: false
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
@@ -19,11 +22,8 @@ before_install:
 - sfdx plugins --core
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
 
-#- export DEPLOYDIR=src
-#- export TESTLEVEL=RunLocalTests
-
 script:
-- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a UAT --wait
+- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a UAT --wait 4
 - sfdx force:source:push -u UAT
 - sfdx force:apex:test:run -u UAT -r human --wait 10
 - sfdx force:org:delete -u UAT -p
