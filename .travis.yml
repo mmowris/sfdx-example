@@ -1,4 +1,3 @@
-os: trusty
 sudo: true
 language: ruby
 group: stable
