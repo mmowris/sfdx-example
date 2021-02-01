@@ -1,8 +1,8 @@
-os:
-  - osx
-language: node_js
-node_js: 
-  - '12.18.3'
+os: trusty
+sudo: true
+language: ruby
+group: stable
+dist: trusty
 cache: false
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
