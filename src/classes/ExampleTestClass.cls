@@ -14,5 +14,6 @@ public with sharing class ExampleTestClass {
     public ExampleTestClass() {
         MyClass demo = new MyClass();
         System.assertEquals(demo.getAppVersion(), '1.0.0');
+        System.assertEquals(demo.getUserDefinedError(), true);
     }
 }

@@ -16,4 +16,8 @@ public with sharing class ExampleClass {
     public String getAppVersion() {
         return '1.0.0';
     }
+
+    public Boolean getUserDefinedError() {
+        return false;
+    }
 }
