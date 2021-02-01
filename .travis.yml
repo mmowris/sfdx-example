@@ -1,4 +1,6 @@
 language: generic
+os: linux
+dist: xenial
 cache: false
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
@@ -15,14 +17,13 @@ before_install:
 - export PATH=./sfdx/$(pwd):$PATH
 - sfdx --version
 - sfdx plugins --core
-- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $USERNAME --setdefaultdevhubusername
+- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
 
 #- export DEPLOYDIR=src
 #- export TESTLEVEL=RunLocalTests
 
 script:
-- sfdx force:org:create -s -f config/project-scratch-def.json -a UAT
+- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a UAT --wait
 - sfdx force:source:push -u UAT
-- sfdx force:apex:test:run -u UAT -r tap
-- sleep 4m
+- sfdx force:apex:test:run -u UAT -r human --wait 10
 - sfdx force:org:delete -u UAT -p
