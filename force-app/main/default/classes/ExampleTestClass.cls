@@ -11,7 +11,7 @@
 @isTest
 private class ExampleTestClass {
     @isTest
-    static ExampleTestClass() {
+    static void ExampleTestClass() {
         ExampleClass demo = new ExampleClass();
         System.assertEquals(demo.getAppVersion(), '1.0.0');
         System.assertEquals(demo.getUserDefinedError(), true);
