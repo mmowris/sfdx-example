@@ -1,0 +1,276 @@
+{
+  "edition": "enterprise",
+  "features": [
+    "addcustomapps:250",
+    "addcustomobjects:1",
+    "addcustomtabs:1200",
+    "asyncsoapcallouts",
+    "botseinsteinaic2cenabled",
+    "chatbot",
+    "cloudtocloud",
+    "commonprm",
+    "communities",
+    "contactstomultipleaccounts",
+    "contractapprovals",
+    "copysharingmodelonsignup",
+    "cpq",
+    "crmuser",
+    "custobjchangeowneremail",
+    "customercommunityplus",
+    "customerexperienceanalytics",
+    "datamaskuser",
+    "debugapex",
+    "developmentwave",
+    "devhubappdevelopment",
+    "einsteinarticlerecommendations",
+    "einsteinbuilder",
+    "einsteinbuilderfree",
+    "einsteinsearchpersonalization",
+    "employeeexperience",
+    "entitlements",
+    "eventlogfile",
+    "flowsites",
+    "forcecomplatform",
+    "fsccomprehensive",
+    "highvelocitysales",
+    "insightsadminanalyticsapp",
+    "insightssalesanalytics",
+    "insightsserviceanalytics",
+    "interaction",
+    "languageonlylocale",
+    "legacyliveagentrouting",
+    "lightningdomainspropagated",
+    "lightningscheduler",
+    "macros",
+    "offlineuser",
+    "pardotadvanced",
+    "pardotenterprise",
+    "pardotscfeaturescampaigninfluence",
+    "partnercommunity",
+    "personaccounts",
+    "platformconnect",
+    "platformencryption",
+    "predictivesupport",
+    "salescloudeinstein",
+    "salesconsoleuser",
+    "salesforcecontentuser",
+    "salesforceiqinbox",
+    "salesuser",
+    "scrt2conversation",
+    "servicecloud",
+    "showchatterfilesincontent",
+    "sites",
+    "stateandcountrypicklist",
+    "sustainabilitycloud",
+    "timesheettemplatesettings",
+    "voiceenabled",
+    "workflowapexaction"
+  ],
+  "settings": {
+    "accountIntelligenceSettings": {
+      "enableNewsStories": true
+    },
+    "actionsSettings": {
+      "enableThirdPartyActions": true
+    },
+    "activitiesSettings": {
+      "allowUsersToRelateMultipleContactsToTasksAndEvents": true,
+      "enableClickCreateEvents": true,
+      "enableListViewScheduling": true,
+      "enableSidebarCalendarShortcut": true,
+      "enableUserListViewCalendars": true,
+      "showEventDetailsMultiUserCalendar": true
+    },
+    "analyticsSettings": {
+      "enableDashboardComponentSnapshot": true,
+      "enableInsights": true,
+      "enableRemoveFooterForRepDisplay": true,
+      "enableRemoveFooterFromRepExp": true,
+      "enableReportCrtAutoAddPref": true,
+      "enableUseOldChartsLookAndFeel": true,
+      "enableWaveIndexMVDim": true
+    },
+    "caseSettings": {
+      "caseFeedReadUnreadLtng": true,
+      "enableEmailContactOnCasePost": true,
+      "enableEscalateQfiToCaseInternal": true,
+      "enableEscalateQfiToCaseNetworks": true,
+      "enableExtNetworksCaseFeedEnabled": true,
+      "notifyContactOnCaseComment": true,
+      "predictiveSupportEnabled": true
+    },
+    "chatterSettings": {
+      "enableChatterEmoticons": true,
+      "enableInviteCsnUsers": true,
+      "enableOutOfOfficeEnabledPref": true,
+      "unlistedGroupsEnabled": true
+    },
+    "communitiesSettings": {
+      "canModerateAllFeedPosts": true,
+      "canModerateInternalFeedPosts": true,
+      "embeddedVisualforcePages": true,
+      "enableCommunityWorkspaces": true,
+      "enableCspNotesOnAccConPref": true,
+      "enableEnablePRM": true,
+      "enableNetPortalUserReportOpts": true,
+      "enableNetworksEnabled": true,
+      "enableOotbProfExtUserOpsEnable": true,
+      "enablePowerCustomerCaseStatus": true
+    },
+    "contentSettings": {
+      "enableContentAutoAssign": true,
+      "enableShowChatterFilesInContent": true
+    },
+    "currencySettings": {
+      "isMultiCurrencyActivationAllowed": true
+    },
+    "dataDotComSettings": {
+      "enableAllowDupeContactFromLead": true,
+      "enableAllowDupeLeadFromContact": true
+    },
+    "devHubSettings": {
+      "enableScratchOrgManagementPref": true,
+      "enableShapeExportPref": true
+    },
+    "emailAdministrationSettings": {
+      "enableEmailWorkflowApproval": true,
+      "enableResendBouncedEmails": true
+    },
+    "emailIntegrationSettings": {
+      "doesGmailStayConnectedToSalesforce": true
+    },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": true
+    },
+    "entitlementSettings": {
+      "enableEntitlements": true,
+      "enableMilestoneFeedItem": true
+    },
+    "experienceBundleSettings": {
+      "enableExperienceBundleMetadata": true
+    },
+    "fieldServiceSettings": {
+      "fieldServiceOrgPref": true
+    },
+    "flowSettings": {
+      "canDebugFlowAsAnotherUser": true,
+      "enableFlowFieldFilterEnabled": true,
+      "enableFlowPauseEnabled": true
+    },
+    "forecastingSettings": {
+      "enableForecasts": true
+    },
+    "knowledgeSettings": {
+      "enableChatterQuestionKBDeflection": true,
+      "enableKnowledge": true,
+      "enableKnowledgeAnswersPromotion": true,
+      "enableKnowledgeArticleTextHighlights": true,
+      "enableKnowledgeKeywordAutoComplete": true,
+      "enableKnowledgeTitleAutoComplete": true,
+      "enableLightningKbAutoLoadRichTextField": true,
+      "enableLightningKnowledge": true,
+      "showArticleSummariesCustomerPortal": true,
+      "showArticleSummariesInternalApp": true,
+      "showArticleSummariesPartnerPortal": true,
+      "cases": {
+        "enableArticlePublicSharingSites": true,
+        "useProfileForPDFCreation": true
+      },
+      "suggestedArticles": {
+        "useSuggestedArticlesForCase": true
+      }
+    },
+    "leadConfigSettings": {
+      "doesTrackHistory": true,
+      "enableOrgWideMergeAndDelete": true
+    },
+    "lightningExperienceSettings": {
+      "enableNoBackgroundNavigations": true,
+      "enableS1DesktopEnabled": true,
+      "enableTryLightningOptOut": true
+    },
+    "liveAgentSettings": {
+      "enableLiveAgent": true,
+      "enableQuickTextEnabled": true
+    },
+    "opportunitySettings": {
+      "enableOpportunityTeam": true
+    },
+    "orderSettings": {
+      "enableNegativeQuantity": true,
+      "enableReductionOrders": true
+    },
+    "orgSettings": {
+      "enableCustomerSuccessPortal": true
+    },
+    "picklistSettings": {
+      "isPicklistApiNameEditDisabled": true
+    },
+    "quoteSettings": {
+      "enableQuote": true
+    },
+    "schemaSettings": {
+      "enableListCustomSettingCreation": true,
+      "enableSOSLOnCustomSettings": true
+    },
+    "searchSettings": {
+      "enableAdvancedSearchInAlohaSidebar": true,
+      "enableEinsteinSearchPersonalization": true,
+      "spellCorrectKnowledgeSearchEnabled": true
+    },
+    "securitySettings": {
+      "enableAdminLoginAsAnyUser": true,
+      "enableAuditFieldsInactiveOwner": true,
+      "passwordPolicies": {
+        "enableSetPasswordInApi": true
+      },
+      "sessionSettings": {
+        "requireHttps": true
+      }
+    },
+    "sharingSettings": {
+      "enableCommunityUserVisibility": true,
+      "enableManualUserRecordSharing": true,
+      "enablePartnerSuperUserAccess": true,
+      "enablePortalUserVisibility": true
+    },
+    "siteSettings": {
+      "enableTopicsInSites": true
+    },
+    "socialCustomerServiceSettings": {
+      "enableSocialCustomerService": true
+    },
+    "surveySettings": {
+      "enableSurvey": true,
+      "enableSurveyOwnerCanManageResponse": true
+    },
+    "systemNotificationSettings": {
+      "disableDowntimeNotifications": true,
+      "disableMaintenanceNotifications": true
+    },
+    "territory2Settings": {
+      "enableTerritoryManagement2": true
+    },
+    "userEngagementSettings": {
+      "enableIBILOptOutDashboards": true,
+      "enableIBILOptOutEvents": true,
+      "enableIBILOptOutReports": true,
+      "enableIBILOptOutTasks": true,
+      "enableScheduledSwitcher": true,
+      "isLEXWelcomeMatDisabled": true
+    },
+    "userInterfaceSettings": {
+      "enableAsyncRelatedLists": true,
+      "enableCollapsibleSideBar": true,
+      "enableProfileCustomTabsets": true
+    },
+    "userManagementSettings": {
+      "enableEnhancedPermsetMgmt": true,
+      "enableNewProfileUI": true
+    },
+    "workDotComSettings": {
+      "enableWorkCalibration": true,
+      "enableWorkRewardsPref": true
+    }
+  }
+}

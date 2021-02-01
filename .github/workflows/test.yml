@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+# Create scratch org
+- name: 'Create scratch org'
+  uses: mmowris/sfdx-example@master
+  with:
+      args: 'force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1'
+=======
+# Create scratch org
+- name: 'Create scratch org'
+  uses: mmowris/sfdx-example@master
+  with:
+      args: 'force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1'
+>>>>>>> c5d08ede2e9c6dd3391b74f546e9513de39987fb
