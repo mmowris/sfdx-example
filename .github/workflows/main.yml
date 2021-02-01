@@ -21,13 +21,13 @@ jobs:
               uses: mmowris/sfdx-orgdev-build-deploy@v2
               with:
                 type: 'sandbox'
-                certificate_path: devops/server.key.enc
+                certificate_path: assets/sandbox_server.key.enc
                 decryption_key: ${{ secrets.DECRYPTION_KEY }}
                 decryption_iv: ${{ secrets.DECRYPTION_IV }}
                 client_id: ${{ secrets.SF_CONSUMER_KEY }}
                 username: ${{ secrets.SF_USERNAME }}
                 checkonly: false
                 deploy_wait_time: '10'
-                manifest_path: manifest/package-01.xml,manifest/package-02.xml,manifest/package-03.xml
+                manifest_path: src/package.xml
                 destructive_path: destructive
                 data_factory: scripts/apex/CreateBaseData.apex
