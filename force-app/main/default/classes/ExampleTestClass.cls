@@ -12,7 +12,7 @@
 public with sharing class ExampleTestClass {
     @isTest
     public ExampleTestClass() {
-        MyClass demo = new MyClass();
+        MyClass demo = new ExampleClass();
         System.assertEquals(demo.getAppVersion(), '1.0.0');
         System.assertEquals(demo.getUserDefinedError(), true);
     }
