@@ -1,22 +1,33 @@
+# Unique name for this workflow
+name: On push develop - Deploy to TI01
 
-  - wget -qO- $CLIURL | tar xJ -C sfdx --strip-components 1
-  - "./sfdx/install"
-  - export PATH=./sfdx/$(pwd):$PATH
+# Definition when the workflow should run
+on:
+    push:
+        branches:
+            - develop
 
-  # Output CLI version and plug-in information
-  - sfdx --version
-  - sfdx plugins --core
+# Jobs to be executed
+jobs:
+    build-deploy:
+        runs-on: ubuntu-latest
+        steps:
 
-#
-# The script step authenticates to the target deployment org and deploys the metadata
-#
-deploy: 
-  script:
-  # Authorize target deployment org
-  - sfdx auth:jwt:grant --instanceurl https://test.salesforce.com --clientid $SF_CONSUMER_KEY --jwtkeyfile assets/server.key --username $SF_USERNAME --setalias UAT 
+            # Checkout the code in the pull request
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
 
-  # Deploy to target deployment org and run unit tests
-  - sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel $TESTLEVEL
-
-  # Example shows how to run a check-only deploy
-  #- sfdx force:mdapi:deploy --checkonly --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel $TESTLEVEL
+            - name: 'Build and Deploy'
+              uses: mmowris/sfdx-orgdev-build-deploy@v2
+              with:
+                type: 'sandbox'
+                certificate_path: devops/server.key.enc
+                decryption_key: ${{ secrets.DECRYPTION_KEY }}
+                decryption_iv: ${{ secrets.DECRYPTION_IV }}
+                client_id: ${{ secrets.SF_CONSUMER_KEY }}
+                username: ${{ secrets.SF_USERNAME }}
+                checkonly: false
+                deploy_wait_time: '10'
+                manifest_path: manifest/package-01.xml,manifest/package-02.xml,manifest/package-03.xml
+                destructive_path: destructive
+                data_factory: scripts/apex/CreateBaseData.apex
