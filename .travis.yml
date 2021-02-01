@@ -22,12 +22,6 @@ script:
   --username $USERNAME --setalias UAT
 - sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel
   $TESTLEVEL
-
-script:
-# Authorize target deployment org
-- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $USERNAME --setalias UAT
-  #Deploy to target deployment org and run unit tests
-- sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel $TESTLEVEL
 #- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --wait
 #  3
 #- sfdx force:org:display -u ciorg
