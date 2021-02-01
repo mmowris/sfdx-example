@@ -1,0 +1,22 @@
+
+  - wget -qO- $CLIURL | tar xJ -C sfdx --strip-components 1
+  - "./sfdx/install"
+  - export PATH=./sfdx/$(pwd):$PATH
+
+  # Output CLI version and plug-in information
+  - sfdx --version
+  - sfdx plugins --core
+
+#
+# The script step authenticates to the target deployment org and deploys the metadata
+#
+deploy: 
+  script:
+  # Authorize target deployment org
+  - sfdx auth:jwt:grant --instanceurl https://test.salesforce.com --clientid $SF_CONSUMER_KEY --jwtkeyfile assets/server.key --username $SF_USERNAME --setalias UAT 
+
+  # Deploy to target deployment org and run unit tests
+  - sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel $TESTLEVEL
+
+  # Example shows how to run a check-only deploy
+  #- sfdx force:mdapi:deploy --checkonly --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel $TESTLEVEL
