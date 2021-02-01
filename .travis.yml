@@ -11,9 +11,9 @@ before_install:
 # Create SFDX directory
 - mkdir sfdx
 # Install SFDX CLI
-- wget -qO- $URL | tar xJ -C sfdx --strip-components 1
-- rm .sfdx/bin/node
-- ln -s /usr/bin/local/node ./sfdx/bin/node
+- wget -qO- $URL | tar xJf -C sfdx --strip-components 1
+#- rm .sfdx/bin/node
+#- ln -s /usr/bin/local/node ./sfdx/bin/node
 - "./sfdx/install"
 - export PATH=./sfdx/$(pwd):$PATH
 - sfdx --version
