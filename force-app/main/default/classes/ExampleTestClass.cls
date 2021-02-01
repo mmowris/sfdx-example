@@ -9,10 +9,10 @@
  * 1.0   01-27-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
 **/
 @isTest
-public with sharing class ExampleTestClass {
+private class ExampleTestClass {
     @isTest
-    public ExampleTestClass() {
-        MyClass demo = new ExampleClass();
+    static ExampleTestClass() {
+        ExampleClass demo = new ExampleClass();
         System.assertEquals(demo.getAppVersion(), '1.0.0');
         System.assertEquals(demo.getUserDefinedError(), true);
     }
