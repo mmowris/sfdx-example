@@ -52,5 +52,6 @@ assets/server.key
 .tern-project
 .settings
 test/artifacts
-.github/
+
+.env
 
