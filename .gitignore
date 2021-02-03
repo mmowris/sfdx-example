@@ -37,8 +37,6 @@ ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
 
-# hide server.key
-assets/server.key
 
 # ignores
 .eslintignore
@@ -53,5 +51,12 @@ assets/server.key
 .settings
 test/artifacts
 
+# secrets
+assets/server.key
 .env
+
+# hidden folders
+.git/
+
+
 
