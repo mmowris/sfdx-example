@@ -33,15 +33,15 @@ jobs:
           name: Decrypt server key
           command: |
             #Decrypt server key
-            openssl enc -nosalt -aes-256-cbc -d -in assets/server.key.enc -out assets/server.key -base64 -K $DECRYPTION_KEY -iv $DECRYPTION_IV
+            openssl enc -nosalt -aes-256-cbc -d -in secrets/server.key.enc -out secrets/server.key -base64 -K $DECRYPTION_KEY -iv $DECRYPTION_IV
       - run:
           name: Authorize Target Deployment Org
           command: |
             #Authorize target org
-            echo $SANDBOX_ENDPOINT 
-            echo $SB_CONSUMER_KEY 
-            echo $SB_USERNAME
-            sfdx auth:jwt:grant --instanceurl $SANDBOX_ENDPOINT  --clientid $SB_CONSUMER_KEY --jwtkeyfile assets/server.key --username $SB_USERNAME --setalias UAT
+            echo $ENDPOINT 
+            echo $CONSUMER_KEY 
+            echo $USERNAME
+            sfdx auth:jwt:grant --instanceurl $ENDPOINT  --clientid $CONSUMER_KEY --jwtkeyfile secrets/server.key --username $USERNAME --setalias UAT
       - run:
           name: Deploy to Target Deployment Org
           command: |

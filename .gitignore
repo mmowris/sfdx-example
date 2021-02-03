@@ -53,11 +53,12 @@ test/artifacts
 
 # secrets
 certificates/
-assets/server.key
-assets/server.pass.key
-assets/server.csr
-assets/server.crt
+secrets/
 .env
+
+secrets/server.crt
+secrets/server.csr
+secrets/secver.key
 
 # hidden folders
 .git/
