@@ -1,6 +1,6 @@
 version: 2
-jobs:
-  build:
+jobs: 
+  build: 
     docker:
       - image: circleci/node:8.9.4
     environment:
@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: 'Create SFDX Folder'
+          name: "Create SFDX Folder" 
           command: |
             # Create sfdx directory
             mkdir sfdx
@@ -33,17 +33,17 @@ jobs:
           name: Decrypt server key
           command: |
             #Decrypt server key
-            openssl enc -nosalt -aes-256-cbc -d -in assets/sb_server.key.enc -out assets/server.key -base64 -K $SB_DECRYPTION_KEY -iv $SB_DECRYPTION_IV
+            openssl enc -nosalt -aes-256-cbc -d -in assets/server.key.enc -out assets/server.key -base64 -K $DECRYPTION_KEY -iv $DECRYPTION_IV
       - run:
           name: Authorize Target Deployment Org
           command: |
             #Authorize target org
-            sfdx auth:jwt:grant --instanceurl $ENDPOINT  --clientid $SB_CONSUMER_KEY --jwtkeyfile assets/server.key --username $SB_USER_NAME --setalias UAT
+            sfdx auth:jwt:grant --instanceurl $ENDPOINT  --clientid $CONSUMER_KEY --jwtkeyfile assets/server.key --username $USER_NAME --setalias UAT
       - run:
           name: Deploy to Target Deployment Org
           command: |
             #Deploy to target deployment org and run unit tests. 
             sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel $TESTLEVEL
-
+            
             #Example shows how to run a check only deploy.
             #sfdx force:mdapi:deploy --checkonly --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel $TESTLEVEL

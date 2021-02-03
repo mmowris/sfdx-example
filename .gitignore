@@ -52,11 +52,17 @@ $RECYCLE.BIN/
 test/artifacts
 
 # secrets
+certificates/
 assets/server.key
+assets/server.pass.key
+assets/server.csr
+assets/server.crt
 .env
 
 # hidden folders
 .git/
+.vscode/
+
 
 
 
