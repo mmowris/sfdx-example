@@ -1,7 +1,0 @@
-name: 'Unlocks git-crypt secrets'
-description: 'Unlocks git-crypt files using alpine docker image'
-author: 'Matt Mowris'
-
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
