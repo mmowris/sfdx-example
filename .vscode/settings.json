@@ -1,0 +1,5 @@
+{
+    "circleci-vscode.apiToken": "a432162384963a08d14aa42f9e27f2fd4b9db99f",
+    "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
+    "codescan.ls.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+}
