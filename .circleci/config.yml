@@ -38,8 +38,10 @@ jobs:
           name: Authorize Target Deployment Org
           command: |
             #Authorize target org
-            echo $SANDBOX_ENDPOINT $SB_CONSUMER_KEY $SB_USERNAME
-            sfdx auth:jwt:grant --instanceurl $SANDBOX_ENDPOINT  --clientid $SB_CONSUMER_KEY --jwtkeyfile assets/server.key --username $SB_USER_NAME --setalias UAT
+            echo $SANDBOX_ENDPOINT 
+            echo $SB_CONSUMER_KEY 
+            echo $SB_USERNAME
+            sfdx auth:jwt:grant --instanceurl $SANDBOX_ENDPOINT  --clientid $SB_CONSUMER_KEY --jwtkeyfile assets/server.key --username $SB_USERNAME --setalias UAT
       - run:
           name: Deploy to Target Deployment Org
           command: |
